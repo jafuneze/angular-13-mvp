@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-app-root-ui',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'app-root-ui',
   templateUrl: './app-root-ui.component.html',
   styleUrls: ['./app-root-ui.component.scss']
 })
-export class AppRootUiComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class AppRootUiComponent {
+  @Input() title: string;
 }
