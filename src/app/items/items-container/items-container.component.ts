@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ItemsService } from '../items.service';
 
 @Component({
   selector: 'app-items-container',
@@ -8,9 +9,15 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class ItemsContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor( private itemService: ItemsService ) { }
 
   ngOnInit(): void {
+    // temporally for test the service 
+    this.itemService.getItems().subscribe(
+      res => {
+        console.log( res );
+      }
+    )
   }
 
 }
