@@ -1,0 +1,20 @@
+{
+    "name": "simple-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start:server": "node index.mjs"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@hapi/hapi": "^20.2.1",
+        "hapi-pino": "^9.0.0",
+        "jshint": "^2.13.1"
+    },
+    "devDependencies": {
+        "pino-pretty": "^7.2.0"
+    }
+}
