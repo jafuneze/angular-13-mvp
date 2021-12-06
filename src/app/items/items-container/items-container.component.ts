@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ItemsService } from '../items.service';
+import { Observable, Subject } from 'rxjs';
+import { Item } from '../item.interface';
 
 @Component({
   selector: 'app-items-container',
@@ -7,17 +9,15 @@ import { ItemsService } from '../items.service';
   styleUrls: ['./items-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ItemsContainerComponent implements OnInit {
-
+export class ItemsContainerComponent {
+  private itemAdd: Subject<Item> = new Subject();
+  items$: Observable<Item[]> = this.itemService.getItems();
+  
   constructor( private itemService: ItemsService ) { }
 
-  ngOnInit(): void {
-    // temporally for test the service 
-    this.itemService.getItems().subscribe(
-      res => {
-        console.log( res );
-      }
-    )
+  add(item: Item) : void {
+    // use the new item and send to db
+    this.itemAdd.next(item);
   }
 
 }

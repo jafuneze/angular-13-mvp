@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ItemsRoutingModule } from './items-routing.module';
 import { ItemsUiComponent } from './items-ui/items-ui.component';
 import { ItemsContainerComponent } from './items-container/items-container.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ItemsContainerComponent } from './items-container/items-container.compo
   imports: [
     CommonModule,
     ItemsRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ]
 })
 export class ItemsModule { }

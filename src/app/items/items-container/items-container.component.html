@@ -1,1 +1,1 @@
-<app-items-ui title="Items list"></app-items-ui>
+<app-items-ui title="Items list" [items]="items$ | async" (add)="add($event)"></app-items-ui>

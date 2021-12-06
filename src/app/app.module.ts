@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppRootUiComponent } from './app-root-ui/app-root-ui.component';
 import { AppRootContainerComponent } from './app-root-container/app-root-container.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppRootContainerComponent]
